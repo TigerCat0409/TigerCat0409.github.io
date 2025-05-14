@@ -1,26 +1,135 @@
 <!DOCTYPE html>
 <html lang="en">
 
+<style>
+    .videoPlayer {
+        text-align: center;
+        left: 12.5%;
+        position: relative;
+        width: 25%;
+        height: 325px;
+    }
+
+    .videoPlayer iframe {
+        width: 100%;
+        height: 100%;
+    }
+
+    .videoSelector {
+        position: relative;
+        top: -20px;
+    }
+
+    .kitList {
+        top: 295px;
+        text-align: center;
+        position: absolute;
+        right: 12.5%;
+    }
+
+    body {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    }
+
+    h1 {
+        font-size: 70px;
+        font-family: spectral;
+    }
+
+    h2 {
+        font-size: 50px;
+        font-family: spectral;
+    }
+
+    h3 {
+        font-size: 35px;
+        font-family: spectral;
+        border-style: none none none solid;
+        border-color: black;
+        background-color: rgba(0, 0, 0, 0.5);
+        width: fit-content;
+    }
+
+    h6 {
+        font-size: 20px;
+        font-family: Arial, Helvetica, sans-serif;
+        border-style: none none none solid;
+        border-color: black;
+        background-color: rgba(0, 0, 0, 0.5);
+        width: fit-content;
+    }
+
+    p {
+        font-size: 20px;
+        font-family: Arial, Helvetica, sans-serif;
+        background-color: rgba(255, 255, 255, 0.85);
+        border-style: solid;
+        border-color: black;
+        border: 5px, 5px, 5px, 5px;
+    }
+
+    a {
+        color: white;
+    }
+
+    a:hover {
+        color: yellow;
+    }
+
+    ul {
+        font-size: 20px;
+        font-family: Arial, Helvetica, sans-serif;
+        background-color: rgba(255, 255, 255, 0.85);
+        border-style: solid;
+        border-color: black;
+        border: 5px, 5px, 5px, 5px;
+    }
+
+</style>
+
 <head>
     <title> White Water Kayaking Information </title>
     <link rel="icon" type="image/x-icon" href="/Arup Logo Icon.ico">
 </head>
 
-<body>
-    <a href="index.html"> Home </a>
+<body background="Arup Background.png">
+    <h6><a href="index.html"> Home </a></h6>
     <h1> White Water Kayaking Information </h1>
         <ul>
             <li> For the white water kayaking wiki page <a href="https://en.wikipedia.org/wiki/Whitewater_kayaking"> click here. </a> </li>
             <li> For a short guide on getting into white water kayaking <a href="https://paddlepursuits.com/white-water-kayaking/"> click here. </a> </li>
         </ul>
-    <h1> Kit Requirements </h1>
-        <ul>
-            <li> A white water kayak </li>
-            <li> A white water kayaking helmet </li>
-            <li> A paddle </li>
-            <li> A buoyancy aid </li>
-            <li> A spray deck </li>
-            <li> A dry/wet suit (depending on location and weather) </li>
-            <li> A pair or wet shoes/old trainers </li>
-        </ul>
+    <div>
+        <div class="videoPlayer">
+            <h1> Some Of My Experiences!</h1>
+            <select class="videoSelector" id="videoSelector" onchange="changeVideo()">
+                <option value="https://www.youtube.com/embed/WjBxZrOOzbI">River Irwell</option>
+                <option value="https://www.youtube.com/embed/A3ybEJmHagc">River Dart</option>
+                <option value="https://www.youtube.com/embed/pKL2KOiKjiw">River Tryweryn</option>
+                <option value="https://www.youtube.com/embed/cqxNQJZj3g0">Cardiff White Water Center</option>
+            </select>
+            <iframe id="videoPlayer" src="https://www.youtube.com/embed/WjBxZrOOzbI" allowfullscreen height="325px" width="25%px"></iframe>
+                <script>
+                    function changeVideo() {
+                        const videoSelector = document.getElementById("videoSelector");
+                        const videoPlayer = document.getElementById("videoPlayer")
+                        videoPlayer.src = videoSelector.value;
+                    }
+                </script>
+        </div>
+        <div class="kitList">
+            <h1> Kit Requirements </h1>
+            <ul>
+                <li> A white water kayak </li>
+                <li> A white water kayaking helmet </li>
+                <li> A paddle </li>
+                <li> A buoyancy aid </li>
+                <li> A spray deck </li>
+                <li> A dry/wet suit (depending on location and weather) </li>
+                <li> A pair or wet shoes/old trainers </li>
+            </ul>
+        </div>
+    </div>
 </body>
